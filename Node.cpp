@@ -1,5 +1,5 @@
 #include "Node.h"
-
+//node object owns student object, pass in student
 
 Node::Node(Student* newStudent) {
   student = newStudent;

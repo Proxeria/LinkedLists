@@ -3,6 +3,9 @@
 
 using namespace std;
 
+//students have only ids at the moment
+//students are under node, no user interaction yet
+
 void add(Student* student);
 void print(Node* next);
 

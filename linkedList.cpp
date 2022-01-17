@@ -3,32 +3,30 @@
 
 using namespace std;
 
-void add(int newvalue);
+void add(Student* student);
 void print(Node* next);
 
 Node* head = NULL;
 
 int main() {
-  add(5);
+  add(new Student(3));
   print(head);
-  add(7);
+  add(new Student(5));
   print(head);
-  add(2);
+  add(new Student(7));
   print(head);
 }
 
-void add(int newvalue) {
+void add(Student* student) {
   Node* current = head;
   if (current == NULL) {
-    head = new Node();
-    head->setValue(newvalue);
+    head = new Node(student);
   }
   else {
     while (current->getNext() != NULL) {
       current = current->getNext();
     }
-    current->setNext(new Node());
-    current->getNext()->setValue(newvalue);
+    current->setNext(new Node(student));
   }
 }
 
@@ -37,7 +35,10 @@ void print(Node* next) {
     cout << "list:";
   }
   if (next != NULL) {
-    cout << next->getValue() << " ";
+    cout << next->getStudent()->getStudentID() << " ";
     print(next->getNext());
+  }
+  else {
+    cout << endl;
   }
 }
